@@ -44,7 +44,7 @@ At one request at a time, NukeTorch decodes 482.7 to 597.5 tok/s on prompts A to
 
 **Table 1. Speed, RAM and energy**
 
-| | NukeTorch N1.0.4 | mlx-lm<br>0.32.2 | llama.cpp<br>1.0.0 build 12359 | oMLX<br>0.8.0rc1 Splash + DFlash2 |
+| | NukeTorch 1.0.4 | mlx-lm<br>0.32.2 | llama.cpp<br>1.0.0 build 12359 | oMLX<br>0.8.0rc1 Splash + DFlash2 |
 |---|---:|---:|---:|---:|
 | **Speed (tok/s)** | | | | |
 | Prompt A (5 coding prompts) | **517.5** | 126.8 | 107.5 | 387.3 |
@@ -75,7 +75,7 @@ At one request at a time, NukeTorch decodes 482.7 to 597.5 tok/s on prompts A to
 
 **Table 2. NukeTorch against the other engines** (the range over every row of Table 1 where both engines have a number)
 
-| NukeTorch N1.0.4 vs | mlx-lm | llama.cpp | oMLX |
+| NukeTorch 1.0.4 vs | mlx-lm | llama.cpp | oMLX |
 |---|---:|---:|---:|
 | Inference speed | 3.9× to 6.8× faster | 2.9× to 5.5× faster | 1.0× to 1.4× faster |
 | RAM | 15% to 36% more | 10% to 24% less | 4% less to 18% more |
@@ -91,6 +91,10 @@ At one request at a time, NukeTorch decodes 482.7 to 597.5 tok/s on prompts A to
 Qwen3.6-35B-A3B 4-bit on one Apple M5 Max (18 cores, 48 GB, macOS 26.7.2). Every engine runs as its maker ships it: latest release, maker's install, maker's start command, default settings, except that NukeTorch's users rows used `--users 8`. mlx-lm and llama.cpp ran without a draft model. oMLX runs with its Splash engine turned on, as oMLX's documentation describes, with the DFlash2 draft model. NukeTorch runs with its DFlash2 draft model and typical acceptance. tok/s is decode speed. RAM is the increase in the whole Mac's memory used. tok/J is tokens per joule of chip power (CPU + GPU + ANE), not wall power.
 
 The full report has power per test, the method, versions and the Mac's conditions: [benchmark/qwen36_35b_four_engines_M5.pdf](benchmark/qwen36_35b_four_engines_M5.pdf).
+
+NukeTorch Enterprise runs one model across machines by pipeline parallelism. It is by invitation. Ask for an evaluation license:
+
+[![Request a NukeTorch Enterprise evaluation license](https://img.shields.io/badge/NukeTorch%20Enterprise-Request%20an%20evaluation%20license-121F47?style=for-the-badge)](mailto:contact@nuketorch.ai?subject=NukeTorch%20Enterprise%20evaluation%20request&body=Name%3A%0AOrganization%3A%0AMacs%20%28how%20many%2C%20which%20chips%2C%20memory%29%3A%0AModel%20or%20workload%3A%0A)
 
 ### How we did it
 
@@ -137,8 +141,6 @@ Before you measure: turn off Spotlight indexing (`sudo mdutil -a -i off`; turn i
 
 ### License
 
-NukeTorch N is free for personal use, schools and universities, and businesses and other organizations (not government entities or international organizations) that with their affiliates have less than US$10 million in revenue and fewer than 250 people, on up to 250 machines, each working alone. Everyone else may evaluate it for 30 days, then needs a commercial license: contact@nuketorch.ai. You may not offer its function itself to others: access to its API, or running, serving or fine-tuning models for them. Terms are in [LICENSE.md](https://github.com/NukeTorch/nuketorch/blob/n1.0.4/LICENSE.md). The model and its draft model are Apache-2.0, by their makers.
-
-Names of models and engines belong to their makers; their makers do not endorse NukeTorch.
+NukeTorch is free for personal use, schools and universities, and businesses and other organizations (not government entities or international organizations) that with their affiliates have less than US$10 million in revenue and fewer than 250 people, on up to 250 machines, each working alone. Everyone else may evaluate it for 30 days, then needs a commercial license: contact@nuketorch.ai. You may not offer its function itself to others: access to its API, or running, serving or fine-tuning models for them. Terms are in [LICENSE.md](https://github.com/NukeTorch/nuketorch/blob/n1.0.4/LICENSE.md). The model and its draft model are Apache-2.0, by their makers.
 
 **Powered by NukeTorch** · https://nuketorch.ai · Back to [NukeTorch/nuketorch](https://github.com/NukeTorch/nuketorch)
