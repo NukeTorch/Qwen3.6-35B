@@ -1,5 +1,7 @@
 # NukeTorch - Run Qwen 3.6 35B (4-bit) at 511.1 tok/s on Apple Silicon
 
+511.1 tok/s: NVIDIA SPEED-Bench coding prompts on NukeTorch 1.0.5. The tables below are the four-engine comparison from the benchmark report.
+
 C++ and Metal Tensor Engine serves text and image for inference and training.
 
 **[Video demo](https://youtu.be/tj_VcOJ0VKk)** · **[Detailed benchmark report](benchmark/qwen36_35b_four_engines_M5.pdf)**
