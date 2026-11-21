@@ -1,4 +1,4 @@
-# NukeTorch - Run Qwen 3.6 35B (4-bit) at 517.5 tok/s on Apple Silicon
+# NukeTorch - Run Qwen 3.6 35B (4-bit) at 511.1 tok/s on Apple Silicon
 
 C++ and Metal Tensor Engine serves text and image for inference and training.
 
@@ -9,7 +9,7 @@ C++ and Metal Tensor Engine serves text and image for inference and training.
 Install with `curl`, not a browser.
 
 ```sh
-curl -fsSL https://github.com/NukeTorch/nuketorch/releases/download/n1.0.4/install.sh | sh
+curl -fsSL https://github.com/NukeTorch/nuketorch/releases/download/1.0.5/install.sh | sh
 ```
 
 Get the model and its draft model from Hugging Face ([model card](https://huggingface.co/NukeTorch/Qwen3.6-35B-A3B-4bit-DFlash2)):
@@ -24,7 +24,7 @@ python3 -m venv ~/NukeTorch/hf-env && ~/NukeTorch/hf-env/bin/pip install -U hugg
 Run it:
 
 ```sh
-cd ~/NukeTorch/nuketorch-n1.0.4-macos-arm64
+cd ~/NukeTorch/nuketorch-1.0.5-macos-arm64
 ./nuketorch-serve http \
   --model ~/NukeTorch/models/Qwen3.6-35B-A3B-4bit-DFlash2/Qwen3.6-35B-A3B-4bit \
   --draft-model ~/NukeTorch/models/Qwen3.6-35B-A3B-4bit-DFlash2/Qwen3.6-35B-A3B-DFlash2 \
@@ -44,7 +44,7 @@ At one request at a time, NukeTorch decodes 482.7 to 597.5 tok/s on prompts A to
 
 **Table 1. Speed, RAM and energy**
 
-| | NukeTorch 1.0.4 | mlx-lm<br>0.32.2 | llama.cpp<br>1.0.0 build 12359 | oMLX<br>0.8.0rc1 Splash + DFlash2 |
+| | NukeTorch 1.0.5 | mlx-lm<br>0.32.2 | llama.cpp<br>1.0.0 build 12359 | oMLX<br>0.8.0rc1 Splash + DFlash2 |
 |---|---:|---:|---:|---:|
 | **Speed (tok/s)** | | | | |
 | Prompt A (5 coding prompts) | **517.5** | 126.8 | 107.5 | 387.3 |
@@ -75,7 +75,7 @@ At one request at a time, NukeTorch decodes 482.7 to 597.5 tok/s on prompts A to
 
 **Table 2. NukeTorch against the other engines** (the range over every row of Table 1 where both engines have a number)
 
-| NukeTorch 1.0.4 vs | mlx-lm | llama.cpp | oMLX |
+| NukeTorch 1.0.5 vs | mlx-lm | llama.cpp | oMLX |
 |---|---:|---:|---:|
 | Inference speed | 3.9× to 6.8× faster | 2.9× to 5.5× faster | 1.0× to 1.4× faster |
 | RAM | 15% to 36% more | 10% to 24% less | 4% less to 18% more |
@@ -123,7 +123,7 @@ This repeats NukeTorch's speed on our prompts; Table 1 itself, with the other en
 `bench` runs the model's standard suite; `report` shows your run beside ours.
 
 ```sh
-cd ~/NukeTorch/nuketorch-n1.0.4-macos-arm64
+cd ~/NukeTorch/nuketorch-1.0.5-macos-arm64
 ./nuketorch-serve bench ~/NukeTorch/models/Qwen3.6-35B-A3B-4bit-DFlash2
 ./nuketorch-serve report
 ```
@@ -141,6 +141,6 @@ Before you measure: turn off Spotlight indexing (`sudo mdutil -a -i off`; turn i
 
 ### License
 
-NukeTorch is free for personal use, schools and universities, and businesses and other organizations (not government entities or international organizations) that with their affiliates have less than US$10 million in revenue and fewer than 250 people, on up to 250 machines, each working alone. Everyone else may evaluate it for 30 days, then needs a commercial license: contact@nuketorch.ai. You may not offer its function itself to others: access to its API, or running, serving or fine-tuning models for them. Terms are in [LICENSE.md](https://github.com/NukeTorch/nuketorch/blob/n1.0.4/LICENSE.md). The model and its draft model are Apache-2.0, by their makers.
+NukeTorch is free for personal use, schools and universities, and businesses and other organizations (not government entities or international organizations) that with their affiliates have less than US$10 million in revenue and fewer than 250 people, on up to 250 machines, each working alone. Everyone else may evaluate it for 30 days, then needs a commercial license: contact@nuketorch.ai. You may not offer its function itself to others: access to its API, or running, serving or fine-tuning models for them. Terms are in [LICENSE.md](https://github.com/NukeTorch/nuketorch/blob/1.0.5/LICENSE.md). The model and its draft model are Apache-2.0, by their makers.
 
 **Powered by NukeTorch** · https://nuketorch.ai · Back to [NukeTorch/nuketorch](https://github.com/NukeTorch/nuketorch)
