@@ -1,6 +1,6 @@
-# NukeTorch - Run Qwen 3.6 35B (4-bit) at 511.1 tok/s on Apple Silicon
+# NukeTorch - Run Qwen 3.6 35B (4-bit) at 517.5 tok/s on Apple Silicon
 
-511.1 tok/s: NVIDIA SPEED-Bench coding prompts on NukeTorch 1.0.5. The tables below are the four-engine comparison from the benchmark report.
+517.5 tok/s: prompt A (5 coding prompts), from the benchmark report below.
 
 C++ and Metal Tensor Engine serves text and image for inference and training.
 
@@ -46,7 +46,7 @@ At one request at a time, NukeTorch decodes 482.7 to 597.5 tok/s on prompts A to
 
 **Table 1. Speed, RAM and energy**
 
-| | NukeTorch 1.0.5 | mlx-lm<br>0.32.2 | llama.cpp<br>1.0.0 build 12359 | oMLX<br>0.8.0rc1 Splash + DFlash2 |
+| | NukeTorch | mlx-lm<br>0.32.2 | llama.cpp<br>1.0.0 build 12359 | oMLX<br>0.8.0rc1 Splash + DFlash2 |
 |---|---:|---:|---:|---:|
 | **Speed (tok/s)** | | | | |
 | Prompt A (5 coding prompts) | **517.5** | 126.8 | 107.5 | 387.3 |
@@ -77,7 +77,7 @@ At one request at a time, NukeTorch decodes 482.7 to 597.5 tok/s on prompts A to
 
 **Table 2. NukeTorch against the other engines** (the range over every row of Table 1 where both engines have a number)
 
-| NukeTorch 1.0.5 vs | mlx-lm | llama.cpp | oMLX |
+| NukeTorch vs | mlx-lm | llama.cpp | oMLX |
 |---|---:|---:|---:|
 | Inference speed | 3.9× to 6.8× faster | 2.9× to 5.5× faster | 1.0× to 1.4× faster |
 | RAM | 15% to 36% more | 10% to 24% less | 4% less to 18% more |
